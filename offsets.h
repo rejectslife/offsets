@@ -1,19 +1,18 @@
 #pragma once
 /* =============================================================
-/*                      raycast's offsets                                          
+/*                       Raycast's offsets                                          
 /* -------------------------------------------------------------
-/*  Dumped With     : Raycast's Dumper
+/*  Dumped With     : Raycast's Dumper 
 /*  Roblox Version  : version-cec3ad5889b447cf
 /*  Dumped At       : 18:16 07/10/2026 (GMT)
-/*  Total Offsets   : 419
 /* -------------------------------------------------------------
-/*                            lol
+/*  Structure offsets updated Raycast dump.
+/*  RVA / extra classes kept from previous
 /* =============================================================
 */
 
 #include <cstdint>
 #include <string>
-// Keep this if you still use the RVA mirrors
 #include "rva.h"
 
 namespace Offsets {
@@ -55,6 +54,7 @@ namespace Offsets {
 
     namespace BasePart {
         inline uintptr_t CastShadow = 0x125;
+        inline uintptr_t ClusterNode = 0x180;          // kept from old
         inline uintptr_t Color3 = 0x198;
         inline uintptr_t Locked = 0x126;
         inline uintptr_t Massless = 0x127;
@@ -76,7 +76,7 @@ namespace Offsets {
         inline uintptr_t TextureLength = 0x18c;
         inline uintptr_t TextureSpeed = 0x194;
         inline uintptr_t Width0 = 0x198;
-        inline uintptr_t Width1 = 0x4f;
+        inline uintptr_t Width1 = 0x4f;                // updated
         inline uintptr_t ZOffset = 0x1a0;
     }
 
@@ -92,24 +92,126 @@ namespace Offsets {
         inline uintptr_t Size = 0xa8;
     }
 
+    namespace ClassDescriptor {
+        inline uintptr_t ClassName = 0x8;
+        inline uintptr_t Creator = 0x230;
+        inline uintptr_t EventDescriptors = 0x88;
+        inline uintptr_t FunctionDescriptors = 0xd0;
+        inline uintptr_t PropertyDescriptors = 0x40;
+    }
+
+    namespace Creator {
+        inline uintptr_t MapStart = ::RVA::Creator::MapStart;
+        inline uintptr_t MapEnd = ::RVA::Creator::MapEnd;
+    }
+
+    namespace Types {
+        inline uintptr_t AllTypes = ::RVA::Types::AllTypes;
+    }
+
+    namespace DeviceD3D11Gfx {
+        inline uintptr_t VTableRva = ::RVA::DeviceD3D11Gfx::VTableRva;
+    }
+
+    namespace GeometryD3D11 {
+        inline uintptr_t VTableRva = ::RVA::GeometryD3D11::VTableRva;
+    }
+
+    namespace FastCluster {
+        inline uintptr_t VTableRva = ::RVA::FastCluster::VTableRva;
+        inline uintptr_t VTableRvaSub = ::RVA::FastCluster::VTableRvaSub;
+    }
+
+    namespace FastClusterBinding {
+        inline uintptr_t VTableRva = ::RVA::FastClusterBinding::VTableRva;
+    }
+
+    namespace InstancedCluster2 {
+        inline uintptr_t VTableRva = ::RVA::InstancedCluster2::VTableRva;
+    }
+
+    namespace SmoothClusterNode {
+        inline uintptr_t VTableRva = ::RVA::SmoothClusterNode::VTableRva;
+    }
+
+    namespace Fire {
+        inline uintptr_t FireProximityPrompt = ::RVA::Fire::FireProximityPrompt;
+    }
+
+    namespace Functions {
+        inline uintptr_t Clone = ::RVA::Functions::Clone;
+        inline uintptr_t Destroy = ::RVA::Functions::Destroy;
+        inline uintptr_t FindPartOnRay = ::RVA::Functions::FindPartOnRay;
+        inline uintptr_t FindPartOnRayWithIgnoreList = ::RVA::Functions::FindPartOnRayWithIgnoreList;
+        inline uintptr_t FindPartOnRayWithWhitelist = ::RVA::Functions::FindPartOnRayWithWhitelist;
+        inline uintptr_t FireServer = ::RVA::Functions::FireServer;
+        inline uintptr_t Print = ::RVA::Functions::Print;
+        inline uintptr_t RaisePropertyChanged = ::RVA::Functions::RaisePropertyChanged;
+        inline uintptr_t Raycast = ::RVA::Functions::Raycast;
+        inline uintptr_t SetParent = ::RVA::Functions::SetParent;
+        inline uintptr_t SetParentInternal = ::RVA::Functions::SetParentInternal;
+        inline uintptr_t Shapecast = ::RVA::Functions::Shapecast;
+    }
+
+    namespace InstancedBinding2 {
+        inline uintptr_t Cluster = 0x68;
+    }
+
+    namespace Descriptor {
+        inline uintptr_t Name = 0x8;
+    }
+
     namespace ByteCode {
         inline uintptr_t Pointer = 0x10;
         inline uintptr_t Size = 0x28;
     }
 
     namespace CachedItem {
-        inline uintptr_t FileMeshData = 0x28;
+        inline uintptr_t FileMeshData = 0x28;          // updated
+    }
+
+    namespace FileMeshData {
+        inline uintptr_t AABBMax = 0x18c;
+        inline uintptr_t AABBMin = 0x180;
+        inline uintptr_t Faces = 0x30;
+        inline uintptr_t FacesEnd = 0x38;
+        inline uintptr_t Vertices = 0x0;
+        inline uintptr_t VerticesEnd = 0x8;
+    }
+
+    namespace LRUHolder {
+        inline uintptr_t MemEnforcedLRUCache = 0x20;
+    }
+
+    namespace LruHolder {
+        inline uintptr_t MemEnforcedLRUCache = ::Offsets::LRUHolder::MemEnforcedLRUCache;
+    }
+
+    namespace LRUNode {
+        inline uintptr_t AssetID = 0x10;
+        inline uintptr_t CachedItem = 0x38;            // updated
+        inline uintptr_t Next = 0x0;
+    }
+
+    namespace LruNode {
+        inline uintptr_t CachedItem = 0x38;
+        inline uintptr_t MeshId = 0x10;
+        inline uintptr_t Next = 0x0;
+    }
+
+    namespace MemEnforcedLRUCache {
+        inline uintptr_t Head = 0x8;
     }
 
     namespace Camera {
         inline uintptr_t CameraSubject = 0xb8;
         inline uintptr_t CameraType = 0x128;
         inline uintptr_t FieldOfView = 0x130;
-        inline uintptr_t ImagePlaneDepth = 0x2d4;
-        inline uintptr_t Position = 0x0;
+        inline uintptr_t ImagePlaneDepth = 0x2d4;      // updated
+        inline uintptr_t Position = 0x0;               // updated
         inline uintptr_t Rotation = 0xc8;
-        inline uintptr_t Viewport = 0x28c;
-        inline uintptr_t ViewportSize = 0x2cc;
+        inline uintptr_t Viewport = 0x28c;             // updated
+        inline uintptr_t ViewportSize = 0x2cc;         // updated
     }
 
     namespace CharacterMesh {
@@ -121,8 +223,8 @@ namespace Offsets {
 
     namespace ClickDetector {
         inline uintptr_t MaxActivationDistance = 0xd8;
-        inline uintptr_t MouseIcon = 0xb8;
         inline uintptr_t CursorIcon = 0xb8;
+        inline uintptr_t MouseIcon = CursorIcon;
     }
 
     namespace Clothing {
@@ -149,7 +251,7 @@ namespace Offsets {
         inline uintptr_t JobId = 0x110;
         inline uintptr_t PlaceId = 0x188;
         inline uintptr_t PlaceVersion = 0x1a4;
-        inline uintptr_t PrimitiveCount = 0x18d;
+        inline uintptr_t PrimitiveCount = 0x18d;       // updated
         inline uintptr_t ScriptContext = 0x440;
         inline uintptr_t ServerIP = 0x5b8;
         inline uintptr_t ToRenderView1 = 0x1c0;
@@ -185,51 +287,26 @@ namespace Offsets {
         inline uintptr_t RealDataModel = 0x1f8;
     }
 
-    namespace FastClusterEntity {
-        inline uintptr_t AlphaByte = 0x14;
-        inline uintptr_t BBoxMaxX = 0xa4;
-        inline uintptr_t BBoxMaxY = 0xa8;
-        inline uintptr_t BBoxMaxZ = 0xac;
-        inline uintptr_t BBoxMinX = 0x98;
-        inline uintptr_t BBoxMinY = 0x9c;
-        inline uintptr_t BBoxMinZ = 0xa0;
-        inline uintptr_t ContextPtr = 0x8;
-        inline uintptr_t DecalMaterialPtr = 0x48;
-        inline uintptr_t MaterialPtr = 0x20;
-        inline uintptr_t PrimitiveIndexArrayPtr = 0x80;
-        inline uintptr_t RenderQueueId = 0x10;
-        inline uintptr_t TechniqueArrayPtr = 0x70;
-        inline uintptr_t VTableRva = 0x6d70ce8;
-    }
-
-    namespace FileMeshData {
-        inline uintptr_t AABBMax = 0x18c;
-        inline uintptr_t AABBMin = 0x180;
-        inline uintptr_t Faces = 0x30;
-        inline uintptr_t FacesEnd = 0x38;
-        inline uintptr_t Vertices = 0x0;
-        inline uintptr_t VerticesEnd = 0x8;
-    }
-
     namespace GuiBase2D {
         inline uintptr_t AbsolutePosition = 0xfc;
         inline uintptr_t AbsoluteRotation = 0xd8;
-        inline uintptr_t AbsoluteSize = 0x104;
+        inline uintptr_t AbsoluteSize = 0x104;        // updated
     }
 
     namespace GuiObject {
         inline uintptr_t BackgroundColor3 = 0x530;
         inline uintptr_t BackgroundTransparency = 0x53c;
         inline uintptr_t BorderColor3 = 0x53c;
-        inline uintptr_t Image = 0x9a8;
+        inline uintptr_t BorderSizePixel = 0x55c;     // kept from old
+        inline uintptr_t Image = 0x9a8;                // updated
         inline uintptr_t LayoutOrder = 0x56c;
         inline uintptr_t Position = 0x500;
-        inline uintptr_t RichText = 0xba0;
+        inline uintptr_t RichText = 0xba0;             // updated
         inline uintptr_t Rotation = 0xd8;
-        inline uintptr_t ScreenGui_Enabled = 0x0;
+        inline uintptr_t ScreenGui_Enabled = 0x0;      // updated
         inline uintptr_t Size = 0x520;
-        inline uintptr_t Text = 0xe08;
-        inline uintptr_t TextColor3 = 0xeb8;
+        inline uintptr_t Text = 0xe08;                 // updated
+        inline uintptr_t TextColor3 = 0xeb8;           // updated
         inline uintptr_t Visible = 0x59d;
         inline uintptr_t ZIndex = 0x594;
     }
@@ -247,11 +324,11 @@ namespace Offsets {
         inline uintptr_t Health = 0x180;
         inline uintptr_t HealthDisplayDistance = 0x178;
         inline uintptr_t HealthDisplayType = 0x17c;
-        inline uintptr_t HipHeight = 0x0;
-        inline uintptr_t HumanoidRootPart = 0x460;
-        inline uintptr_t HumanoidState = 0x8a8;
+        inline uintptr_t HipHeight = 0x0;              // updated
+        inline uintptr_t HumanoidRootPart = 0x460;     // updated
+        inline uintptr_t HumanoidState = 0x8a8;        // updated
         inline uintptr_t HumanoidStateID = 0x20;
-        inline uintptr_t IsWalking = 0xa27;
+        inline uintptr_t IsWalking = 0xa27;            // updated
         inline uintptr_t Jump = 0x1ca;
         inline uintptr_t JumpHeight = 0x190;
         inline uintptr_t JumpPower = 0x194;
@@ -263,6 +340,7 @@ namespace Offsets {
         inline uintptr_t NameDisplayDistance = 0x1a0;
         inline uintptr_t NameOcclusion = 0x1a4;
         inline uintptr_t PlatformStand = 0x1cc;
+        inline uintptr_t PlatformStatePointer = 0x56b30156; // kept from old
         inline uintptr_t RequiresNeck = 0x1cd;
         inline uintptr_t RigType = 0x1b0;
         inline uintptr_t SeatPart = 0xf8;
@@ -272,13 +350,20 @@ namespace Offsets {
         inline uintptr_t WalkTimer = 0x0;
         inline uintptr_t Walkspeed = 0x1c0;
         inline uintptr_t WalkSpeed = 0x1c0;
-        inline uintptr_t WalkspeedCheck = 0x39c;
         inline uintptr_t WalkSpeedCheck = 0x39c;
+        inline uintptr_t WalkspeedCheck = 0x39c;
     }
 
     namespace Instance {
+        inline uintptr_t Creator_create = 0x0;
+        inline uintptr_t Creator_isCreatable = 0x10;
+        inline uintptr_t FromExisting = ::RVA::Instance::FromExisting;
+        inline uintptr_t New = ::RVA::Instance::New;
+        inline uintptr_t SetParent = ::RVA::Instance::SetParent;
+        inline uintptr_t ClassByName = ::RVA::Instance::ClassByName;
         inline uintptr_t ChildrenEnd = 0x8;
         inline uintptr_t ChildrenStart = 0x78;
+        inline uintptr_t ChildrenStride = 0x10;        // kept from old
         inline uintptr_t ClassBase = 0x1b0;
         inline uintptr_t ClassDescriptor = 0x18;
         inline uintptr_t ClassName = 0x8;
@@ -286,16 +371,6 @@ namespace Offsets {
         inline uintptr_t NameContainer = 0x70;
         inline uintptr_t Parent = 0x68;
         inline uintptr_t This = 0x8;
-    }
-
-    namespace LRUHolder {
-        inline uintptr_t MemEnforcedLRUCache = 0x20;
-    }
-
-    namespace LRUNode {
-        inline uintptr_t AssetID = 0x10;
-        inline uintptr_t CachedItem = 0x38;
-        inline uintptr_t Next = 0x0;
     }
 
     namespace Lighting {
@@ -353,27 +428,22 @@ namespace Offsets {
         inline uintptr_t WoodPlanks = 0x15;
     }
 
-    namespace MaterialLayer {
-        inline uintptr_t ColorData = 0x24;
-        inline uintptr_t FillModeByte = 0x11;
-        inline uintptr_t Flags2 = 0x20;
-        inline uintptr_t MatFlags = 0x18;
-        inline uintptr_t Param = 0x1c;
-        inline uintptr_t Stride = 0x88;
-    }
-
-    namespace MemEnforcedLRUCache {
-        inline uintptr_t Head = 0x8;
-    }
-
     namespace MeshContentProvider {
         inline uintptr_t LRUHolder = 0xc8;
     }
 
+    namespace MeshData {
+        inline uintptr_t FaceEnd = 0x38;
+        inline uintptr_t FaceStart = 0x30;
+        inline uintptr_t VertexEnd = 0x8;
+        inline uintptr_t VertexStart = 0x0;
+    }
+
     namespace MeshPart {
         inline uintptr_t MeshId = 0x300;
-        inline uintptr_t MeshSize = 0x218;
+        inline uintptr_t MeshSize = 0x218;             // added from new
         inline uintptr_t Texture = 0x330;
+        inline uintptr_t TextureId = 0x730;            // kept from old
     }
 
     namespace Misc {
@@ -423,6 +493,7 @@ namespace Offsets {
     namespace Player {
         inline uintptr_t AccountAge = 0x34c;
         inline uintptr_t CameraMode = 0x360;
+        inline uintptr_t Character = 0x298;            // kept from old
         inline uintptr_t DisplayName = 0x128;
         inline uintptr_t HealthDisplayDistance = 0x384;
         inline uintptr_t LocalPlayer = 0x120;
@@ -449,9 +520,13 @@ namespace Offsets {
     namespace Primitive {
         inline uintptr_t AssemblyAngularVelocity = 0xec;
         inline uintptr_t AssemblyLinearVelocity = 0xe0;
+        inline uintptr_t CFrame = 0xb0;                // kept from old
         inline uintptr_t Flags = 0x1b6;
-        inline uintptr_t Material = 0x0;
+        inline uintptr_t PrimitiveFlags = 0x1b6;
+        inline uintptr_t Orientation = 0xb0;           // kept from old
+        inline uintptr_t Part = 0x210;                 // kept from old
         inline uintptr_t Owner = 0x210;
+        inline uintptr_t Material = 0x0;               // updated (was 0x246)
         inline uintptr_t Position = 0xd4;
         inline uintptr_t Rotation = 0xb0;
         inline uintptr_t Size = 0x1bc;
@@ -465,10 +540,20 @@ namespace Offsets {
         inline uintptr_t CanTouch = 0x10;
     }
 
+    namespace PrimitivePool {
+        inline uintptr_t ArrayBase = 0xa0;
+    }
+
+    namespace PrimitiveRecord {
+        inline uintptr_t Stride = 0x50;
+        inline uintptr_t Translation = 0x2c;
+    }
+
     namespace ProximityPrompt {
         inline uintptr_t ActionText = 0xa0;
         inline uintptr_t Enabled = 0x126;
         inline uintptr_t GamepadKeyCode = 0x10c;
+        inline uintptr_t KeyboardKeyCode = 0x114;      // kept from old
         inline uintptr_t HoldDuration = 0x110;
         inline uintptr_t KeyCode = 0x114;
         inline uintptr_t MaxActivationDistance = 0x118;
@@ -479,7 +564,7 @@ namespace Offsets {
     namespace RenderJob {
         inline uintptr_t FakeDataModel = 0x38;
         inline uintptr_t RealDataModel = 0x1f0;
-        inline uintptr_t RenderView = 0x1e0;
+        inline uintptr_t RenderView = 0x1e0;           // updated
     }
 
     namespace RenderView {
@@ -490,7 +575,7 @@ namespace Offsets {
     }
 
     namespace RunService {
-        inline uintptr_t HeartbeatFPS = 0xc0;
+        inline uintptr_t HeartbeatFPS = 0xc0;          // updated
         inline uintptr_t HeartbeatTask = 0xe0;
     }
 
@@ -535,7 +620,8 @@ namespace Offsets {
     }
 
     namespace SpawnLocation {
-        inline uintptr_t AllowTeamChangeOnTouch = 0x1e0;
+        inline uintptr_t AllowTeamChangeOnTouch = 0x1e0; // updated
+        inline uintptr_t Duration = 0x1d8;             // kept
         inline uintptr_t Enabled = 0x1e1;
         inline uintptr_t ForcefieldDuration = 0x1d8;
         inline uintptr_t Neutral = 0x1e2;
@@ -544,11 +630,13 @@ namespace Offsets {
 
     namespace SpecialMesh {
         inline uintptr_t MeshId = 0xe8;
+        inline uintptr_t Offset = 0xb8;                // kept from old
         inline uintptr_t Scale = 0xb4;
+        inline uintptr_t TextureId = 0x128;            // kept from old
     }
 
     namespace StatsItem {
-        inline uintptr_t Value = 0xa0;
+        inline uintptr_t Value = 0xa0;                 // updated
     }
 
     namespace SunRaysEffect {
@@ -574,17 +662,12 @@ namespace Offsets {
         inline uintptr_t JobName = 0x18;
         inline uintptr_t JobStart = 0xc8;
         inline uintptr_t MaxFPS = 0xb0;
-        inline uintptr_t Pointer = 0x8b79128;         // UPDATED
+        inline uintptr_t Pointer = 0x8b79128;          // UPDATED
     }
 
     namespace Team {
         inline uintptr_t BrickColor = 0xa8;
-    }
-
-    namespace TechniqueArray {
-        inline uintptr_t BeginOffset = 0x0;
-        inline uintptr_t EndOffset = 0x8;
-        inline uintptr_t EntryStride = 0x88;
+        inline uintptr_t TeamColor = BrickColor;
     }
 
     namespace Terrain {
@@ -606,6 +689,8 @@ namespace Offsets {
         inline uintptr_t CanBeDropped = 0x4a8;
         inline uintptr_t Enabled = 0x4a9;
         inline uintptr_t Grip = 0x49c;
+        inline uintptr_t GripForward = 0x490;          // kept
+        inline uintptr_t GripUp = 0x484;               // kept
         inline uintptr_t ManualActivationOnly = 0x4aa;
         inline uintptr_t RequiresHandle = 0x4ab;
         inline uintptr_t TextureId = 0x350;
@@ -622,6 +707,7 @@ namespace Offsets {
 
     namespace VehicleSeat {
         inline uintptr_t MaxSpeed = 0x218;
+        inline uintptr_t Occupant = 0x1f8;             // kept from old
         inline uintptr_t SteerFloat = 0x21c;
         inline uintptr_t ThrottleFloat = 0x220;
         inline uintptr_t Torque = 0x224;
@@ -631,7 +717,7 @@ namespace Offsets {
     namespace VisualEngine {
         inline uintptr_t Dimensions = 0xb10;
         inline uintptr_t FakeDataModel = 0xaf0;
-        inline uintptr_t Pointer = 0x8656e40;         // UPDATED
+        inline uintptr_t Pointer = 0x8656e40;          // UPDATED
         inline uintptr_t RenderView = 0xc30;
         inline uintptr_t ViewMatrix = 0x1b0;
     }
@@ -654,15 +740,254 @@ namespace Offsets {
     namespace Workspace {
         inline uintptr_t CurrentCamera = 0x4a8;
         inline uintptr_t DistributedGameTime = 0x4c8;
-        inline uintptr_t ReadOnlyGravity = 0x9c8;
+        inline uintptr_t ReadOnlyGravity = 0x9c8;      // updated
         inline uintptr_t World = 0x400;
     }
 
     namespace World {
-        inline uintptr_t AirProperties = 0x238;
-        inline uintptr_t FallenPartsDestroyHeight = 0x218;
-        inline uintptr_t Gravity = 0x224;
-        inline uintptr_t Primitives = 0x2c8;
-        inline uintptr_t worldStepsPerSec = 0x740;
+        inline uintptr_t AirProperties = 0x238;        // updated
+        inline uintptr_t FallenPartsDestroyHeight = 0x218; // updated
+        inline uintptr_t Gravity = 0x224;              // updated
+        inline uintptr_t Primitives = 0x2c8;           // updated
+        inline uintptr_t WorldSteps = 0x740;           // updated
+        inline uintptr_t worldStepsPerSec = WorldSteps;
+    }
+
+    // ===== Kept from your original header (RVA / extra classes) =====
+
+    namespace Alloc {
+        inline uintptr_t Malloc = ::RVA::Alloc::Malloc;
+    }
+
+    namespace Attribute {
+        inline uintptr_t Key = 0x0;
+        inline uintptr_t Size = 0x58;
+        inline uintptr_t Type = 0x18;
+        inline uintptr_t TypeIdRva = ::RVA::Attribute::TypeIdRva;
+        inline uintptr_t TypeIdRvaNew = 0x88063b4;
+        inline uintptr_t Value = 0x8;
+    }
+
+    namespace AttributesMap {
+        inline uintptr_t Attributes = 0x10;
+        inline uintptr_t Length = 0x0;
+    }
+
+    namespace Chat {
+        inline uintptr_t IsFocused = 0x154;
+    }
+
+    namespace FastClusterEntity {
+        inline uintptr_t AlphaByte = 0x14;
+        inline uintptr_t BBoxMaxX = 0xA4;
+        inline uintptr_t BBoxMaxY = 0xA8;
+        inline uintptr_t BBoxMaxZ = 0xAC;
+        inline uintptr_t BBoxMinX = 0x98;
+        inline uintptr_t BBoxMinY = 0x9C;
+        inline uintptr_t BBoxMinZ = 0xA0;
+        inline uintptr_t ContextPtr = 0x08;
+        inline uintptr_t DecalMaterialPtr = 0x48;
+        inline uintptr_t MaterialPtr = 0x20;
+        inline uintptr_t PrimitiveIndexArrayPtr = 0x80;
+        inline uintptr_t RenderQueueId = 0x10;
+        inline uintptr_t TechniqueArrayPtr = 0x70;
+        inline uintptr_t VTableRva = ::RVA::FastClusterEntity::VTableRva;
+
+        namespace Context {
+            inline uintptr_t PrimitivePoolPtr = 0x1A0;
+        }
+        namespace PrimitivePool {
+            inline uintptr_t ArrayBase = 0x20;
+        }
+        namespace PrimitiveRecord {
+            inline uintptr_t Stride = 48;
+            inline uintptr_t Translation = 36;
+        }
+    }
+
+    namespace Highlight {
+        inline uintptr_t FillColor = 0xc8;
+        inline uintptr_t FillTransparency = 0xe4;
+        inline uintptr_t OutlineColor = 0xd4;
+        inline uintptr_t OutlineTransparency = 0xec;
+        inline uintptr_t DepthMode = 0xe8;
+        inline uintptr_t Enabled = 0xf4;
+        inline uintptr_t Adornee = 0xb8;
+        inline uintptr_t AdorneeControl = 0xc0;
+        inline uintptr_t AdorneeGetSet = 0xb0;
+    }
+
+    namespace InputObject {
+        inline uintptr_t MousePosition = 0xd4;
+    }
+
+    namespace LightingParameters {
+        inline uintptr_t GeographicLatitude = 0x134;
+        inline uintptr_t LightColor = 0x15c;
+        inline uintptr_t LightDirection = 0x168;
+        inline uintptr_t SkyAmbient = 0x150;
+        inline uintptr_t SkyAmbient2 = 0x138;
+        inline uintptr_t Source = 0x174;
+        inline uintptr_t TrueMoonPosition = 0x184;
+        inline uintptr_t TrueSunPosition = 0x178;
+    }
+
+    namespace LuaState {
+        inline uintptr_t Base = 0x60;
+        inline uintptr_t Global = 0x70;
+        inline uintptr_t Top = 0x48;
+        inline uintptr_t TypeTag = 0x0;
+    }
+
+    namespace Luau {
+        inline uintptr_t loadstring = ::RVA::Luau::loadstring;
+        inline uintptr_t lua_getglobal = 0x0;
+        inline uintptr_t require_impl = 0x0;
+    }
+
+    namespace LuauGlobal {
+        inline uintptr_t currentwhite = 0x10;
+        inline uintptr_t dummynode = 0x8806310;
+        inline uintptr_t gcopages = 0x320;
+        inline uintptr_t gcopages_end = 0x0;
+        inline uintptr_t gcopages_large = 0x320;
+        inline uintptr_t gcpause = 0x28;
+        inline uintptr_t gcstate = 0x11;
+        inline uintptr_t gcstepmul = 0x2c;
+        inline uintptr_t gcstepsize = 0x30;
+        inline uintptr_t GCthreshold = 0x50;
+        inline uintptr_t gray = 0x48;
+        inline uintptr_t grayagain = 0x40;
+        inline uintptr_t page_next_all = 0x8;
+        inline uintptr_t page_next_free = 0x18;
+        inline uintptr_t strt_hash = 0x0;
+        inline uintptr_t strt_size = 0x8;
+        inline uintptr_t totalbytes = 0x58;
+        inline uintptr_t weak = 0x38;
+    }
+
+    namespace LuauObject {
+        inline uintptr_t marked = 0x2;
+        inline uintptr_t page_block = 0x24;
+        inline uintptr_t page_data = 0x40;
+        inline uintptr_t page_next = 0x8;
+        inline uintptr_t page_size = 0x20;
+        inline uintptr_t table_array = 0x28;
+        inline uintptr_t table_gclist = 0x20;
+        inline uintptr_t table_lsz = 0x7;
+        inline uintptr_t table_node = 0x18;
+        inline uintptr_t table_sizearray = 0x8;
+        inline uintptr_t tt = 0x0;
+    }
+
+    namespace MaterialLayer {
+        inline uintptr_t ColorData = 0x24;
+        inline uintptr_t FillModeByte = 0x11;
+        inline uintptr_t Flags2 = 0x20;
+        inline uintptr_t MatFlags = 0x18;
+        inline uintptr_t Param = 0x1C;
+        inline uintptr_t Stride = 136;
+    }
+
+    namespace Players {
+        inline uintptr_t LocalPlayer = ::Offsets::Player::LocalPlayer;
+    }
+
+    namespace Reflection {
+        inline uintptr_t ClassDescCreatable = 0x10;
+        inline uintptr_t ClassDescFlags = 0x1bc;
+        inline uintptr_t CreatorTable = ::RVA::Reflection::CreatorTable;
+        inline uintptr_t EntryValue = 0x8;
+        inline uintptr_t NameRegistry = ::RVA::Reflection::NameRegistry;
+        inline uintptr_t NameTable = 0x50;
+        inline uintptr_t TableEmpty = 0x20;
+        inline uintptr_t TableEnd = 0x8;
+        inline uintptr_t TableStart = 0x0;
+        inline uintptr_t TableStride = 0x10;
+    }
+
+    namespace RenderQueue {
+        inline uintptr_t AlwaysOnTop = 13u;
+        inline uintptr_t AlwaysOnTopAdorns = 14u;
+        inline uintptr_t Decals = 2u;
+        inline uintptr_t Glass = 8u;
+        inline uintptr_t GlassTint = 7u;
+        inline uintptr_t OnTopReadOnlyDepth = 12u;
+        inline uintptr_t OnTopWithDepth = 11u;
+        inline uintptr_t Opaque = 0u;
+        inline uintptr_t OpaqueAdorns = 4u;
+        inline uintptr_t OpaqueCasters = 3u;
+        inline uintptr_t OpaqueWithAlpha = 5u;
+        inline uintptr_t Screen = 15u;
+        inline uintptr_t ScreenOnTopOfBlur = 16u;
+        inline uintptr_t Terrain = 1u;
+        inline uintptr_t Transparent = 9u;
+        inline uintptr_t TransparentCasters = 10u;
+        inline uintptr_t Water = 6u;
+    }
+
+    namespace RobloxString {
+        inline uintptr_t Size = 0x10;
+        inline uintptr_t SsoCapacity = 0xf;
+    }
+
+    namespace TechniqueArray {
+        inline uintptr_t BeginOffset = 0x0;
+        inline uintptr_t EndOffset = 0x8;
+        inline uintptr_t EntryStride = 136;
+    }
+
+    namespace TextButton {
+        inline uintptr_t AutoButtonColor = 0x9c4;
+        inline uintptr_t ContentText = 0xe08;
+        inline uintptr_t Font = 0x6;
+        inline uintptr_t LineHeight = 0xf0;
+        inline uintptr_t LocalizedText = 0xe08;
+        inline uintptr_t MaxVisibleGraphemes = 0xb8;
+        inline uintptr_t Modal = 0x9c5;
+        inline uintptr_t RichText = 0x6;
+        inline uintptr_t Selected = 0x9c6;
+        inline uintptr_t Text = 0xe08;
+        inline uintptr_t TextColor3 = 0x1120;
+        inline uintptr_t TextDirection = 0x6;
+        inline uintptr_t TextScaled = 0x6;
+        inline uintptr_t TextSize = 0x1144;
+        inline uintptr_t TextStrokeColor3 = 0x14;
+        inline uintptr_t TextStrokeTransparency = 0xf0;
+        inline uintptr_t TextTransparency = 0x20;
+        inline uintptr_t TextTruncate = 0x6;
+        inline uintptr_t TextWrapped = 0x6;
+        inline uintptr_t TextXAlignment = 0x669;
+        inline uintptr_t TextYAlignment = 0xd;
+    }
+
+    namespace TextLabel {
+        inline uintptr_t ContentText = 0xb88;
+        inline uintptr_t Font = 0x6;
+        inline uintptr_t LineHeight = 0xca0;
+        inline uintptr_t LocalizedText = 0xb88;
+        inline uintptr_t MaxVisibleGraphemes = 0xebc;
+        inline uintptr_t RichText = 0xd9e;
+        inline uintptr_t Text = 0xdf0;
+        inline uintptr_t TextColor3 = 0xea0;
+        inline uintptr_t TextDirection = 0x6;
+        inline uintptr_t TextScaled = 0xd96;
+        inline uintptr_t TextSize = 0xec4;
+        inline uintptr_t TextStrokeColor3 = 0xeac;
+        inline uintptr_t TextStrokeTransparency = 0xec8;
+        inline uintptr_t TextTransparency = 0xecc;
+        inline uintptr_t TextTruncate = 0x6;
+        inline uintptr_t TextWrapped = 0xd98;
+        inline uintptr_t TextXAlignment = 0x669;
+        inline uintptr_t TextYAlignment = 0xd;
+    }
+
+    namespace Value {
+        inline uintptr_t Value = 0xb8;
+    }
+
+    namespace WorldRoot {
+        inline uintptr_t RaycastBoundDesc = ::RVA::WorldRoot::RaycastBoundDesc;
+        inline uintptr_t RaycastBoundFn = 0x90;
     }
 }
