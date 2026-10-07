@@ -2,7 +2,7 @@
 /* =============================================================
 /*                      raycast's offsets                                          
 /* -------------------------------------------------------------
-/*  Dumped With     : Raycast's Dumper (updated from theo)
+/*  Dumped With     : Raycast's Dumper
 /*  Roblox Version  : version-cec3ad5889b447cf
 /*  Dumped At       : 18:16 07/10/2026 (GMT)
 /*  Total Offsets   : 419
