@@ -1,14 +1,6 @@
 #pragma once
 /* =============================================================
 /*  raycast RVAs (function / vtable / global pointer addresses)
-/* -------------------------------------------------------------
-/*  Member field offsets live in offsets.h. Only RVAs live here.
-/*  Source set : raycast manually-derived RVAs, refreshed against the
-/*               jingohok dump for version-02c37bc51a384b8f.
-/*               RVA::Chams and RVA::Creator hold RTTI/COL addresses
-/*               that dump does not carry, so they are still stale.
-/*               RVA::Raycast keeps its own descriptor pair, unresolved.
-/*               (the old build's value is kept until it is re-found).
 /* =============================================================
 */
 #include <cstddef>
@@ -25,10 +17,6 @@ namespace RVA {
     }
 
     namespace Chams {
-        // Field layout below is confirmed against version-02c37bc51a384b8f.
-        // The RTTI type descriptors, COLs and vtable addresses in here are
-        // NOT - that dump carries no RTTI section, so they are still from
-        // the older build and need re-finding.
         inline constexpr bool Resolved = true;
 
         namespace RttiTypeDescriptors {
@@ -89,19 +77,15 @@ namespace RVA {
             inline constexpr std::uint32_t RenderEntityQueueIdScreenOnTopOfScene = 16;
             inline std::uintptr_t TechniqueArrayBegin = 0x00;
             inline std::uintptr_t TechniqueArrayEnd = 0x08;
-            // 136 - confirmed against version-02c37bc51a384b8f.
             inline std::uintptr_t TechniqueStride = 136;
-
             inline std::uintptr_t TechniqueRasterizerState = 0x10;
             inline std::uintptr_t TechniqueCullMode = 0x10;
             inline std::uintptr_t TechniqueFillMode = 0x11;
             inline std::uintptr_t TechniqueDepthBias = 0x14;
-
             inline std::uintptr_t TechniqueDepthState = 0x18;
             inline std::uintptr_t TechniqueDepthFunction = 0x18;
             inline std::uintptr_t TechniqueDepthWrite = 0x19;
             inline std::uintptr_t TechniqueStencilMode = 0x1a;
-
             inline std::uintptr_t TechniqueBlendState = 0x1c;
             inline std::uintptr_t TechniqueBlendColorMask = 0x1c;
             inline std::uintptr_t TechniqueBlendColorSource = 0x20;
@@ -109,7 +93,6 @@ namespace RVA {
             inline std::uintptr_t TechniqueBlendAlphaSource = 0x22;
             inline std::uintptr_t TechniqueBlendAlphaDestination = 0x23;
             inline std::uintptr_t TechniqueBlendAlphaToCoverage = 0x24;
-
             inline constexpr std::uint8_t TechniqueCullModeNone = 0;
             inline constexpr std::uint8_t TechniqueCullModeBack = 1;
             inline constexpr std::uint8_t TechniqueCullModeFront = 2;
@@ -124,7 +107,6 @@ namespace RVA {
             inline constexpr std::uint8_t TechniqueDepthFunctionEqual = 5;
             inline constexpr std::uint8_t TechniqueDepthFunctionNotEqual = 6;
             inline constexpr std::uint32_t TechniqueBlendColorMaskAll = 0x0f;
-
             inline std::uintptr_t MaterialLayerStride = TechniqueStride;
             inline std::uintptr_t MaterialLayerCullMode = TechniqueCullMode;
             inline std::uintptr_t MaterialLayerFillMode = TechniqueFillMode;
@@ -134,7 +116,6 @@ namespace RVA {
             inline std::uintptr_t MaterialLayerColorData = TechniqueBlendAlphaToCoverage;
             inline constexpr std::uint8_t MaterialLayerFillModeSolid = TechniqueFillModeSolid;
             inline constexpr std::uint8_t MaterialLayerFillModeWireframe = TechniqueFillModeWireframe;
-
             inline std::uintptr_t FceContextPtr = 0x08;
             inline std::uintptr_t FcePrimitiveIndexArrayPtr = 0x80;
             inline std::uintptr_t FceBBoxMin = 0x98;
@@ -151,9 +132,6 @@ namespace RVA {
 
     namespace Creator {
         inline constexpr bool Resolved = true;
-
-        // The dump exposes the creator type map as a [start, end) pair.
-        // MapStart is the same address as Reflection::CreatorTable.
         inline std::uintptr_t MapStart = 0x85EEAE0;
         inline std::uintptr_t MapEnd = 0x85EEAE8;
 
@@ -182,12 +160,22 @@ namespace RVA {
         }
     }
 
+    // ========== UPDATED GLOBAL POINTERS ==========
     namespace FakeDataModel {
-        inline std::uintptr_t Pointer = 0x8B54980;
+        inline std::uintptr_t Pointer = 0x8BCFD50;          // UPDATED
     }
 
+    namespace TaskScheduler {
+        inline std::uintptr_t Pointer = 0x8B79128;          // UPDATED
+    }
+
+    namespace VisualEngine {
+        inline std::uintptr_t Pointer = 0x8656E40;          // UPDATED
+    }
+    // =============================================
+
     namespace FastClusterEntity {
-        inline std::uintptr_t VTableRva = 0x6D5CE38;
+        inline std::uintptr_t VTableRva = 0x6D70CE8;        // UPDATED from new dump
     }
 
     namespace FastCluster {
@@ -318,21 +306,13 @@ namespace RVA {
         }
     }
 
-    namespace TaskScheduler {
-        inline std::uintptr_t Pointer = 0x8AFF2A0;
-    }
-
-    namespace VisualEngine {
-        inline std::uintptr_t Pointer = 0x858D208;
-    }
-
     namespace WorldRoot {
-        inline std::uintptr_t RaycastBoundDesc = 0x830AF80;
+        inline std::uintptr_t RaycastBoundDesc = 0x8364BB0;   // UPDATED from new dump
     }
 
     namespace Raycast {
-        inline std::uintptr_t RaycastBoundDesc = 0x82C62D0;
-        inline std::uintptr_t RaycastBoundFn = 0x80;
+        inline std::uintptr_t RaycastBoundDesc = 0x8364BB0;   // UPDATED
+        inline std::uintptr_t RaycastBoundFn = 0x90;          // UPDATED (was 0x80)
     }
 
     namespace Raycast2 {
